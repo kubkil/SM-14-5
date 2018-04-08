@@ -4,7 +4,13 @@
   "description": "https://kubkil.github.io/SM-14-5/",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "init": "npm-run-all -s init:*",
+    "init:folders": "mkdir sass css js images",
+    "init:files": "touch index.html sass/style.scss css/style.css js/script.js",
+    "init:gitignore": "curl https://raw.githubusercontent.com/github/gitignore/master/Node.gitignore -o .gitignore",
+    "watch": "npm-run-all -p watch:*",
+    "watch:sass": "node-sass -w --source-map true --output-style compressed scss/ -o css/",
+    "watch:bs": "browser-sync start --server --files css/*.css *.html --browser chrome"
   },
   "repository": {
     "type": "git",
@@ -16,5 +22,10 @@
   "bugs": {
     "url": "https://github.com/kubkil/SM-14-5/issues"
   },
-  "homepage": "https://github.com/kubkil/SM-14-5#readme"
+  "homepage": "https://github.com/kubkil/SM-14-5#readme",
+  "devDependencies": {
+    "browser-sync": "^2.23.6",
+    "node-sass": "^4.8.3",
+    "npm-run-all": "^4.1.2"
+  }
 }

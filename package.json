@@ -9,7 +9,6 @@
     "init:files": "touch index.html sass/style.scss css/style.css js/script.js",
     "init:gitignore": "curl https://raw.githubusercontent.com/github/gitignore/master/Node.gitignore -o .gitignore",
     "watch": "npm-run-all -p watch:*",
-    "watch:sass": "node-sass -w --source-map true --output-style compressed scss/ -o css/",
     "watch:bs": "browser-sync start --server --files css/*.css *.html --browser chrome",
     "build": "babel src -d lib"
   },
@@ -28,7 +27,6 @@
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.6.1",
     "browser-sync": "^2.23.6",
-    "node-sass": "^4.8.3",
     "npm-run-all": "^4.1.2"
   }
 }

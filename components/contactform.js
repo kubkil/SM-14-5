@@ -1,11 +1,11 @@
 const ContactForm = React.createClass({
   propTypes: {
     // dlaczego z dużej a nie małej prop
-    contact: React.PropTypes.object.isRequired
+    contact: React.PropTypes.object.isRequired,
   },
   render: function () {
     return (
-      React.createElement('form', { className: 'contactForm' },
+      React.createElement('form', {className: 'contactForm'},
         React.createElement('input', {
           type: 'text',
           placeholder: 'Imię',
